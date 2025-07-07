@@ -56,25 +56,6 @@ const Hero = () => {
                 Conhecer Serviços
               </Button>
             </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto">
-              <div className="text-center bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
-                <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                <div className="text-sm text-white/70">Clientes Atendidos</div>
-              </div>
-              <div className="text-center bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
-                <div className="text-3xl font-bold text-primary mb-2">95%</div>
-                <div className="text-sm text-white/70">Taxa de Sucesso</div>
-              </div>
-              <div className="text-center bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
-                <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                <div className="text-sm text-white/70">Suporte</div>
-              </div>
-              <div className="text-center bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
-                <div className="text-3xl font-bold text-primary mb-2">5 Anos</div>
-                <div className="text-sm text-white/70">Experiência</div>
-              </div>
-            </div>
           </div>
         </div>
         
