@@ -56,7 +56,7 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
         variant="ghost"
         size="icon"
         onClick={() => setIsOpen(!isOpen)}
-        className="relative z-50 md:hidden"
+        className="relative z-[80] md:hidden"
       >
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
@@ -75,7 +75,7 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-background/80 backdrop-blur-md z-40 md:hidden"
+              className="fixed inset-0 bg-background/80 backdrop-blur-md z-[60] md:hidden"
             />
 
             {/* Menu Panel */}
@@ -84,7 +84,7 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed top-0 right-0 h-full w-80 bg-card border-l border-border z-50 md:hidden"
+              className="fixed top-0 right-0 h-full w-80 bg-card border-l border-border z-[70] md:hidden"
             >
               <div className="flex flex-col h-full pt-20 px-6">
                 <motion.div
