@@ -25,27 +25,9 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        <iframe
-          src="https://www.kapwing.com/e/PpUGzcEOqC"
-          className="w-full h-full object-cover"
-          style={{ 
-            border: 'none',
-            minHeight: '100vh',
-            width: '100%',
-            height: '100%'
-          }}
-          allow="autoplay; fullscreen"
-          allowFullScreen
-        />
-        {/* Dark overlay for better text contrast */}
-        <div className="absolute inset-0 bg-black/60 z-10"></div>
-      </div>
-      
       <BackgroundGradientAnimation
-        gradientBackgroundStart="rgba(0, 0, 0, 0.4)"
-        gradientBackgroundEnd="rgba(15, 17, 21, 0.4)"
+        gradientBackgroundStart="rgb(0, 0, 0)"
+        gradientBackgroundEnd="rgb(15, 17, 21)"
         firstColor="255, 237, 36"
         secondColor="255, 193, 7"
         thirdColor="255, 235, 59"
@@ -54,14 +36,14 @@ const Hero = () => {
         pointerColor="255, 237, 36"
         size={isMobile ? "60%" : "80%"}
         blendingValue="multiply"
-        containerClassName="absolute inset-0 z-20 opacity-30"
+        containerClassName="absolute inset-0"
         interactive={!isMobile}
       />
       
-      <ParticleSystem count={isMobile ? 8 : 15} className="opacity-40 z-30" />
+      <ParticleSystem count={isMobile ? 15 : 30} className="opacity-60" />
       
       <motion.div 
-        className="relative z-40 min-h-screen flex items-center justify-center px-4"
+        className="relative z-10 min-h-screen flex items-center justify-center px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.5 }}
@@ -74,10 +56,9 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 1 }}
           >
             <motion.h1 
-              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight text-center break-words"
+              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl text-center break-words"
               style={{
                 filter: `brightness(${1 + scrollProgress * 0.2})`,
-                textShadow: '0 0 20px rgba(0, 0, 0, 0.8), 2px 2px 4px rgba(0, 0, 0, 0.9)',
               }}
             >
             <FullTypewriter 
@@ -129,7 +110,7 @@ const Hero = () => {
         
         <motion.button 
           onClick={() => scrollToSection("servicos")}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-primary hover:text-primary/80 transition-colors drop-shadow-lg z-50"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-primary hover:text-primary/80 transition-colors drop-shadow-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 4, repeat: Infinity, repeatType: "reverse", repeatDelay: 1 }}
