@@ -17,20 +17,20 @@ const Clients = () => {
 
   const testimonials = [
     {
-      name: "João Silva",
-      company: "TechCorp",
+      name: "Isabela Teles",
+      company: "Master Carnes",
       text: "A MP Assessoria transformou completamente nossa estratégia digital. Resultados incríveis em apenas 3 meses!",
-      image: "👨‍💼"
-    },
-    {
-      name: "Maria Santos",
-      company: "BeautyBrand", 
-      text: "Profissionais excepcionais! Dobrou nossa receita online com campanhas muito bem estruturadas.",
       image: "👩‍💼"
     },
     {
-      name: "Carlos Lima",
-      company: "FitLife",
+      name: "Nilton César",
+      company: "Motel Solarium", 
+      text: "Profissionais excepcionais! Dobrou nossa receita online com campanhas muito bem estruturadas.",
+      image: "👨‍💼"
+    },
+    {
+      name: "Henrique Sá",
+      company: "Hotel Areião",
       text: "O CRM implementado pela equipe organizou todo nosso processo de vendas. Recomendo fortemente!",
       image: "👨‍🏫"
     }
