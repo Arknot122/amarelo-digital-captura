@@ -158,21 +158,6 @@ const Contact = () => {
       </div>
 
       <motion.div ref={ref} className="container mx-auto px-4 relative z-10" initial="hidden" animate={inView ? "visible" : "hidden"} variants={containerVariants}>
-        <motion.div className="text-center mb-16" variants={itemVariants}>
-          <motion.h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6" whileHover={{
-          scale: 1.02
-        }} transition={{
-          type: "spring",
-          stiffness: 300,
-          damping: 20
-        }}>
-            Entre em <span className="bg-gradient-primary bg-clip-text text-transparent">Contato</span>
-          </motion.h2>
-          <motion.p className="text-xl text-muted-foreground max-w-2xl mx-auto" variants={itemVariants}>
-            Pronto para transformar seu negócio digital? Vamos conversar sobre como podemos ajudar!
-          </motion.p>
-        </motion.div>
-
         {/* About Us Section */}
         <motion.div className="mb-16" variants={itemVariants}>
           <div className="bg-card/50 backdrop-blur-xl border border-border/50 rounded-3xl p-8 lg:p-12 hover:border-primary/30 transition-all duration-300">
@@ -221,6 +206,21 @@ const Contact = () => {
           </div>
         </motion.div>
 
+        <motion.div className="text-center mb-16" variants={itemVariants}>
+          <motion.h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6" whileHover={{
+          scale: 1.02
+        }} transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 20
+        }}>
+            Entre em <span className="bg-gradient-primary bg-clip-text text-transparent">Contato</span>
+          </motion.h2>
+          <motion.p className="text-xl text-muted-foreground max-w-2xl mx-auto" variants={itemVariants}>
+            Pronto para transformar seu negócio digital? Vamos conversar sobre como podemos ajudar!
+          </motion.p>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
@@ -228,7 +228,9 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Information */}
-          
+          <motion.div variants={itemVariants}>
+            <ContactInfo onWhatsAppClick={openWhatsApp} />
+          </motion.div>
         </div>
       </motion.div>
     </section>;
