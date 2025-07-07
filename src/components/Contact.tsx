@@ -56,7 +56,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contato" className="py-24 bg-gradient-to-br from-muted/30 to-background">
+    <section id="contato" className="py-24 bg-card">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
