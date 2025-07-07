@@ -228,9 +228,7 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Information */}
-          <motion.div variants={itemVariants}>
-            <ContactInfo onWhatsAppClick={openWhatsApp} />
-          </motion.div>
+          
         </div>
       </motion.div>
     </section>;
