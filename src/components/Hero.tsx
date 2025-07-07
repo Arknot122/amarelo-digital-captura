@@ -32,12 +32,12 @@ const Hero = () => {
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl text-center break-words">
               <TypewriterEffect 
                 text="Pare de perder tempo com Agências de Marketing, sua "
-                speed={100}
+                speed={80}
               />
               <span className="bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent">EMPRESA</span>
               <TypewriterEffect 
                 text=" precisa de uma "
-                speed={100}
+                speed={80}
               />
               <span className="bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent">ASSESSORIA</span>
             </h1>
