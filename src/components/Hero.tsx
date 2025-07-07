@@ -61,12 +61,13 @@ const Hero = () => {
                 filter: `brightness(${1 + scrollProgress * 0.2})`,
               }}
             >
-              <FullTypewriter 
-                fullText="Pare de perder tempo com Agências de Marketing, sua EMPRESA precisa de uma ASSESSORIA"
-                highlightWords={[
-                  { word: "EMPRESA", className: "bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent" },
-                  { word: "ASSESSORIA", className: "bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent" }
-                ]}
+            <FullTypewriter 
+              fullText="Pare de perder tempo com Agências de Marketing, sua EMPRESA precisa de uma ASSESSORIA DIGITAL!"
+              highlightWords={[
+                { word: "EMPRESA", className: "bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent" },
+                { word: "ASSESSORIA", className: "bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent" },
+                { word: "DIGITAL!", className: "bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent" }
+              ]}
                 speed={isMobile ? 150 : 100}
               />
             </motion.h1>
