@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import AnimatedCard from "@/components/AnimatedCard";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { TrendingUp, Users, Target, Bot, Sparkles } from "lucide-react";
 
 const Services = () => {
   const { ref, inView } = useScrollAnimation();
@@ -12,31 +13,36 @@ const Services = () => {
       title: "Gestão de Tráfego",
       description: "Campanhas otimizadas no Google Ads, Facebook e Instagram para maximizar seu ROI",
       features: ["Google Ads", "Facebook Ads", "Instagram Ads", "Otimização de Campanhas"],
-      icon: "📊"
+      icon: TrendingUp,
+      gradient: "from-primary/20 to-accent/20"
     },
     {
       title: "CRM",
       description: "Implementação e gestão de sistemas CRM para organizar e converter seus leads",
       features: ["Configuração de CRM", "Automação de Vendas", "Pipeline de Vendas", "Relatórios"],
-      icon: "💼"
+      icon: Users,
+      gradient: "from-blue-500/20 to-primary/20"
     },
     {
       title: "Treinamento Comercial",
       description: "Capacitação da sua equipe de vendas com técnicas modernas e eficazes",
       features: ["Técnicas de Vendas", "Abordagem Digital", "Scripts de Vendas", "Acompanhamento"],
-      icon: "🎯"
+      icon: Target,
+      gradient: "from-green-500/20 to-primary/20"
     },
     {
       title: "Automações e IA",
       description: "Implementação de chatbots e automações inteligentes para otimizar processos",
       features: ["Chatbots", "Automação WhatsApp", "IA Conversacional", "Workflows"],
-      icon: "🤖"
+      icon: Bot,
+      gradient: "from-purple-500/20 to-primary/20"
     },
     {
       title: "Produção de Conteúdo",
       description: "Criação de conteúdo estratégico para redes sociais e marketing digital",
       features: ["Posts para Redes Sociais", "Copy para Anúncios", "E-mail Marketing", "Blog Posts"],
-      icon: "✨"
+      icon: Sparkles,
+      gradient: "from-pink-500/20 to-primary/20"
     }
   ];
 
@@ -83,17 +89,25 @@ const Services = () => {
               delay={index * 0.2}
               className="h-full"
             >
-              <Card className="h-full group border-border/50 hover:border-primary/30 backdrop-blur-sm bg-card/95 hover:bg-card transition-all duration-500 hover:shadow-glow">
-                <CardHeader className="text-center">
+              <Card className={`h-full group border-border/50 hover:border-primary/30 backdrop-blur-sm bg-gradient-to-br ${service.gradient} hover:shadow-glow transition-all duration-500 relative overflow-hidden`}>
+                {/* Decorative gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <CardHeader className="text-center relative z-10">
                   <motion.div 
-                    className="text-6xl mb-4"
+                    className="mb-4 flex justify-center"
                     whileHover={{ 
                       scale: 1.2, 
                       rotate: [0, -10, 10, 0],
                       transition: { duration: 0.5 }
                     }}
                   >
-                    {service.icon}
+                    <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 group-hover:from-primary/30 group-hover:to-accent/20 transition-all duration-300">
+                      <service.icon 
+                        size={32} 
+                        className="text-primary group-hover:text-primary transition-colors duration-300" 
+                      />
+                    </div>
                   </motion.div>
                   <CardTitle className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {service.title}
