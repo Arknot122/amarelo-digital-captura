@@ -195,8 +195,8 @@ const Contact = () => {
                     <h4 className="font-semibold text-foreground mb-2">WhatsApp</h4>
                     <Button 
                       onClick={openWhatsApp}
-                      variant="outline" 
-                      className="w-full justify-start border-primary/30 hover:bg-primary hover:text-primary-foreground"
+                      variant="hero" 
+                      className="w-full justify-start"
                     >
                       <Phone className="mr-2 h-4 w-4" />
                       (11) 99999-9999

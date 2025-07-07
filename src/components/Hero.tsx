@@ -89,7 +89,7 @@ const Hero = () => {
                   onClick={() => scrollToSection("servicos")}
                   variant="outline" 
                   size="xl"
-                  className="w-full sm:w-auto bg-white/10 border-white/30 text-white hover:bg-white hover:text-black backdrop-blur-md shadow-2xl"
+                  className="w-full sm:w-auto bg-white/10 border-primary/50 text-white hover:bg-primary hover:text-primary-foreground backdrop-blur-md shadow-2xl"
                 >
                   Conhecer Serviços
                 </Button>
