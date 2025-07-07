@@ -87,10 +87,13 @@ const Clients = () => {
           <h3 className="text-2xl font-bold text-foreground mb-8">
             Empresas que confiam em nosso trabalho
           </h3>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {['TechCorp', 'BeautyBrand', 'FitLife', 'EduPlatform', 'FoodChain', 'HealthCare'].map((client, index) => (
-              <div key={index} className="text-lg font-semibold text-muted-foreground hover:text-primary transition-colors cursor-pointer">
-                {client}
+          <div className="flex flex-wrap justify-center items-center gap-8">
+            {Array.from({ length: 6 }, (_, index) => (
+              <div 
+                key={index} 
+                className="w-32 h-20 bg-muted/30 border-2 border-dashed border-muted-foreground/30 rounded-lg flex items-center justify-center hover:border-primary/50 transition-colors"
+              >
+                <span className="text-xs text-muted-foreground/60 font-medium">LOGO</span>
               </div>
             ))}
           </div>
