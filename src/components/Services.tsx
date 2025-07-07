@@ -156,18 +156,6 @@ const Services = () => {
                         </motion.li>
                       ))}
                     </ul>
-                    
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <button 
-                        onClick={() => scrollToSection("contato")}
-          className="w-full py-3 px-6 rounded-xl bg-primary text-primary-foreground font-medium border border-primary/30 backdrop-blur-sm hover:shadow-glow hover:border-primary/60 transition-all duration-300 text-sm"
-                      >
-                        Explorar Serviço
-                      </button>
-                    </motion.div>
                   </div>
                 </MovingButton>
               </motion.div>
