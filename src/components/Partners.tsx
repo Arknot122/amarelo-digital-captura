@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Building2, Facebook, Chrome, ShoppingBag } from "lucide-react";
+import kommoLogo from "@/assets/kommo-logo.png";
+import metaLogo from "@/assets/meta-logo.png";
+import googlePartnerLogo from "@/assets/google-partner-logo.png";
+import shopifyLogo from "@/assets/shopify-logo.png";
 
 const Partners = () => {
   const { ref, inView } = useScrollAnimation();
@@ -8,22 +11,22 @@ const Partners = () => {
   const partners = [
     {
       name: "Kommo",
-      icon: Building2,
+      logo: kommoLogo,
       description: "CRM e Automação"
     },
     {
       name: "Meta Ads",
-      icon: Facebook,
+      logo: metaLogo,
       description: "Publicidade Digital"
     },
     {
       name: "Google Partner",
-      icon: Chrome,
+      logo: googlePartnerLogo,
       description: "Parceiro Certificado"
     },
     {
       name: "Shopify",
-      icon: ShoppingBag,
+      logo: shopifyLogo,
       description: "E-commerce"
     }
   ];
@@ -73,15 +76,15 @@ const Partners = () => {
                 <motion.div 
                   className="mb-4 flex justify-center"
                   whileHover={{ 
-                    scale: 1.2,
-                    rotateZ: 360,
-                    transition: { duration: 0.6 }
+                    scale: 1.1,
+                    transition: { duration: 0.3 }
                   }}
                 >
-                  <div className="p-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-all duration-300">
-                    <partner.icon 
-                      size={32} 
-                      className="text-primary group-hover:text-foreground transition-colors duration-300" 
+                  <div className="h-16 w-auto flex items-center justify-center">
+                    <img 
+                      src={partner.logo} 
+                      alt={`${partner.name} logo`}
+                      className="max-h-12 max-w-full object-contain filter group-hover:brightness-110 transition-all duration-300"
                     />
                   </div>
                 </motion.div>
