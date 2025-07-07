@@ -163,7 +163,7 @@ const Services = () => {
                     >
                       <button 
                         onClick={() => scrollToSection("contato")}
-                        className="w-full py-3 px-6 rounded-xl bg-primary text-primary-foreground font-medium border border-primary/30 backdrop-blur-sm hover:shadow-glow hover:border-primary/60 transition-all duration-300 text-sm"
+          className="w-full py-3 px-6 rounded-xl bg-primary text-primary-foreground font-medium border border-primary/30 backdrop-blur-sm hover:shadow-glow hover:border-primary/60 transition-all duration-300 text-sm"
                       >
                         Explorar Serviço
                       </button>

@@ -62,25 +62,25 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'neon-cyan': 'hsl(var(--neon-cyan))',
-				'neon-purple': 'hsl(var(--neon-purple))',
-				'neon-green': 'hsl(var(--neon-green))',
-				'neon-pink': 'hsl(var(--neon-pink))',
-				'tech-blue': 'hsl(var(--tech-blue))',
-				'cyber-orange': 'hsl(var(--cyber-orange))'
+				'yellow-bright': 'hsl(var(--yellow-bright))',
+				'yellow-soft': 'hsl(var(--yellow-soft))',
+				'yellow-warm': 'hsl(var(--yellow-warm))',
+				'yellow-light': 'hsl(var(--yellow-light))',
+				'yellow-gold': 'hsl(var(--yellow-gold))',
+				'yellow-amber': 'hsl(var(--yellow-amber))'
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-dark': 'var(--gradient-dark)',
-				'gradient-neon': 'var(--gradient-neon)',
+				'gradient-cyber': 'var(--gradient-cyber)',
 				'gradient-tech': 'var(--gradient-tech)',
-				'gradient-cyber': 'var(--gradient-cyber)'
+				'gradient-neon': 'var(--gradient-neon)'
 			},
 			boxShadow: {
 				'card': 'var(--shadow-card)',
 				'glow': 'var(--shadow-glow)',
-				'neon': 'var(--shadow-neon)',
-				'cyber': 'var(--shadow-cyber)'
+				'cyber': 'var(--shadow-cyber)',
+				'neon': 'var(--shadow-neon)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)'

@@ -7,12 +7,12 @@ const Clients = () => {
   const { ref, inView } = useScrollAnimation();
   
   const clients = [
-    { name: "TechCorp", sector: "Tecnologia", result: "+150% conversões", gradient: "from-tech-blue/20 to-neon-cyan/20" },
-    { name: "BeautyBrand", sector: "Beleza", result: "+200% vendas online", gradient: "from-neon-pink/20 to-neon-purple/20" },
-    { name: "FitLife", sector: "Fitness", result: "+300% leads qualificados", gradient: "from-neon-green/20 to-tech-blue/20" },
-    { name: "EduPlatform", sector: "Educação", result: "+180% matrículas", gradient: "from-neon-purple/20 to-primary/20" },
-    { name: "FoodChain", sector: "Alimentício", result: "+120% delivery", gradient: "from-cyber-orange/20 to-neon-pink/20" },
-    { name: "HealthCare", sector: "Saúde", result: "+90% agendamentos", gradient: "from-neon-cyan/20 to-neon-green/20" }
+    { name: "TechCorp", sector: "Tecnologia", result: "+150% conversões", gradient: "from-yellow-bright/20 to-yellow-warm/20" },
+    { name: "BeautyBrand", sector: "Beleza", result: "+200% vendas online", gradient: "from-yellow-soft/20 to-yellow-light/20" },
+    { name: "FitLife", sector: "Fitness", result: "+300% leads qualificados", gradient: "from-yellow-gold/20 to-yellow-bright/20" },
+    { name: "EduPlatform", sector: "Educação", result: "+180% matrículas", gradient: "from-yellow-amber/20 to-primary/20" },
+    { name: "FoodChain", sector: "Alimentício", result: "+120% delivery", gradient: "from-yellow-warm/20 to-yellow-soft/20" },
+    { name: "HealthCare", sector: "Saúde", result: "+90% agendamentos", gradient: "from-yellow-light/20 to-yellow-gold/20" }
   ];
 
   const testimonials = [
@@ -89,7 +89,7 @@ const Clients = () => {
                   </motion.h3>
                   <p className="text-muted-foreground mb-4 text-sm">{client.sector}</p>
                   <motion.div 
-                    className="text-3xl font-bold bg-gradient-neon bg-clip-text text-transparent"
+                    className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent"
                     whileHover={{ scale: 1.2, rotate: 5 }}
                     transition={{ duration: 0.3 }}
                   >
@@ -97,8 +97,8 @@ const Clients = () => {
                   </motion.div>
                   
                   {/* Tech decoration */}
-                  <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-tech rounded-full animate-pulse" />
-                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-gradient-cyber rounded-full animate-pulse delay-300" />
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-gradient-primary rounded-full animate-pulse" />
+                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-primary rounded-full animate-pulse delay-300" />
                 </div>
               </MovingButton>
             </motion.div>
@@ -118,7 +118,7 @@ const Clients = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ delay: 1, duration: 0.6 }}
           >
-            Experiências <span className="bg-gradient-cyber bg-clip-text text-transparent">Transformadoras</span>
+            Experiências <span className="bg-gradient-primary bg-clip-text text-transparent">Transformadoras</span>
           </motion.h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
@@ -136,9 +136,9 @@ const Clients = () => {
                 }}
               >
                 {/* Floating bubble effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10 rounded-3xl blur-xl scale-110" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-yellow-warm/10 rounded-3xl blur-xl scale-110" />
                 
-                <Card className="relative z-10 bg-background/20 backdrop-blur-xl border border-primary/20 hover:border-primary/40 transition-all duration-500 rounded-3xl overflow-hidden shadow-neon hover:shadow-cyber">
+                <Card className="relative z-10 bg-background/20 backdrop-blur-xl border border-primary/20 hover:border-primary/40 transition-all duration-500 rounded-3xl overflow-hidden shadow-glow hover:shadow-glow">
                   <CardContent className="p-8">
                     <div className="text-center mb-6">
                       <motion.div 
