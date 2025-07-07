@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
-import TypewriterEffect from "@/components/Typewriter";
+import FullTypewriter from "@/components/FullTypewriter";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -30,26 +30,14 @@ const Hero = () => {
         <div className="container mx-auto max-w-6xl text-center">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl text-center break-words">
-              <TypewriterEffect 
-                text="Pare de perder tempo com Agências de Marketing, sua "
-                speed={200}
+              <FullTypewriter 
+                fullText="Pare de perder tempo com Agências de Marketing, sua EMPRESA precisa de uma ASSESSORIA"
+                highlightWords={[
+                  { word: "EMPRESA", className: "bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent" },
+                  { word: "ASSESSORIA", className: "bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent" }
+                ]}
+                speed={100}
               />
-              <span className="bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent">
-                <TypewriterEffect 
-                  text="EMPRESA"
-                  speed={200}
-                />
-              </span>
-              <TypewriterEffect 
-                text=" precisa de uma "
-                speed={200}
-              />
-              <span className="bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent">
-                <TypewriterEffect 
-                  text="ASSESSORIA"
-                  speed={200}
-                />
-              </span>
             </h1>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
