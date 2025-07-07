@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Button as MovingButton } from "@/components/ui/moving-border";
 import AnimatedCard from "@/components/AnimatedCard";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -89,65 +90,87 @@ const Services = () => {
               delay={index * 0.2}
               className="h-full"
             >
-              <Card className={`h-full group border-border/50 hover:border-primary/30 backdrop-blur-sm bg-gradient-to-br ${service.gradient} hover:shadow-glow transition-all duration-500 relative overflow-hidden`}>
-                {/* Decorative gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
-                <CardHeader className="text-center relative z-10">
-                  <motion.div 
-                    className="mb-4 flex justify-center"
-                    whileHover={{ 
-                      scale: 1.2, 
-                      rotate: [0, -10, 10, 0],
-                      transition: { duration: 0.5 }
-                    }}
-                  >
-                    <div className="p-4 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/10 group-hover:from-primary/30 group-hover:to-accent/20 transition-all duration-300">
-                      <service.icon 
-                        size={32} 
-                        className="text-primary group-hover:text-primary transition-colors duration-300" 
-                      />
-                    </div>
-                  </motion.div>
-                  <CardTitle className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </CardTitle>
-                  <CardDescription className="text-muted-foreground">
-                    {service.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="flex flex-col flex-grow">
-                  <ul className="space-y-2 mb-6 flex-grow">
-                    {service.features.map((feature, idx) => (
-                      <motion.li 
-                        key={idx} 
-                        className="flex items-center text-sm text-muted-foreground"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: (index * 0.2) + (idx * 0.1) + 0.5 }}
+              <motion.div
+                className="h-full relative group"
+                whileHover={{ 
+                  rotateX: 5,
+                  rotateY: 5,
+                  scale: 1.02,
+                  transition: { duration: 0.3 }
+                }}
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                <MovingButton
+                  borderRadius="2rem"
+                  className="h-full w-full bg-background/10 backdrop-blur-xl border-0 text-foreground relative overflow-hidden"
+                  containerClassName="h-full w-full"
+                  duration={4000 + index * 1000}
+                  borderClassName="h-24 w-24 opacity-60 bg-[radial-gradient(hsl(var(--primary))_40%,hsl(var(--neon-cyan))_60%,transparent_80%)]"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-background/20 via-card/30 to-background/20 backdrop-blur-xl" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  
+                  {/* Glassmorphism card content */}
+                  <div className="relative z-10 h-full flex flex-col p-6">
+                    <div className="text-center mb-6">
+                      <motion.div 
+                        className="mb-4 flex justify-center"
+                        whileHover={{ 
+                          scale: 1.3,
+                          rotateZ: 360,
+                          transition: { duration: 0.8 }
+                        }}
                       >
-                        <motion.span 
-                          className="w-2 h-2 bg-primary rounded-full mr-3"
-                          whileHover={{ scale: 1.5 }}
-                        />
-                        {feature}
-                      </motion.li>
-                    ))}
-                  </ul>
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Button 
-                      onClick={() => scrollToSection("contato")}
-                      variant="outline" 
-                      className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300"
+                        <div className="p-4 rounded-3xl bg-gradient-neon/20 backdrop-blur-sm border border-primary/20 shadow-neon group-hover:shadow-cyber transition-all duration-500">
+                          <service.icon 
+                            size={32} 
+                            className="text-primary group-hover:text-foreground drop-shadow-glow transition-all duration-300" 
+                          />
+                        </div>
+                      </motion.div>
+                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                        {service.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
+                    
+                    <ul className="space-y-3 mb-6 flex-grow">
+                      {service.features.map((feature, idx) => (
+                        <motion.li 
+                          key={idx} 
+                          className="flex items-center text-sm text-muted-foreground"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: (index * 0.2) + (idx * 0.1) + 0.5 }}
+                        >
+                          <motion.div 
+                            className="w-2 h-2 rounded-full mr-3 bg-gradient-tech shadow-neon"
+                            whileHover={{ scale: 1.8, rotate: 180 }}
+                            transition={{ duration: 0.3 }}
+                          />
+                          <span className="group-hover:text-foreground transition-colors duration-300">
+                            {feature}
+                          </span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                    
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      Saiba Mais
-                    </Button>
-                  </motion.div>
-                </CardContent>
-              </Card>
+                      <button 
+                        onClick={() => scrollToSection("contato")}
+                        className="w-full py-3 px-6 rounded-xl bg-gradient-cyber text-foreground font-medium border border-primary/30 backdrop-blur-sm hover:shadow-cyber hover:border-primary/60 transition-all duration-300 text-sm"
+                      >
+                        Explorar Serviço
+                      </button>
+                    </motion.div>
+                  </div>
+                </MovingButton>
+              </motion.div>
             </AnimatedCard>
           ))}
         </div>
