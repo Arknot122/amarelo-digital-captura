@@ -30,15 +30,19 @@ const Header = () => {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
+            {/* Espaço vazio para manter layout */}
+            <div className="flex-1"></div>
+            
+            {/* Logo centralizada */}
             <motion.div 
-              className="flex items-center space-x-3"
+              className="flex items-center justify-center"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
               <motion.img 
-                src="/mp-logo.png"
+                src="/mp-logo-center.png"
                 alt="MP Assessoria Digital"
-                className="h-10 w-auto object-contain"
+                className="h-12 w-auto object-contain"
                 whileHover={{ rotate: 5 }}
                 transition={{ duration: 0.3 }}
                 onError={(e) => {
@@ -75,7 +79,7 @@ const Header = () => {
               ))}
             </nav>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 flex-1 justify-end">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
