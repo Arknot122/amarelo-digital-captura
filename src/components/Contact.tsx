@@ -178,11 +178,11 @@ const Contact = () => {
           <div className="bg-card/50 backdrop-blur-xl border border-border/50 rounded-3xl p-8 lg:p-12 hover:border-primary/30 transition-all duration-300">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               {/* Photo Placeholder */}
-              <motion.div 
-                className="order-2 lg:order-1"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
+              <motion.div className="order-2 lg:order-1" whileHover={{
+              scale: 1.02
+            }} transition={{
+              duration: 0.3
+            }}>
                 <div className="aspect-square lg:aspect-[4/3] bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl border-2 border-dashed border-primary/30 flex items-center justify-center group hover:border-primary/50 transition-all duration-300">
                   <div className="text-center text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                     <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
@@ -198,11 +198,11 @@ const Contact = () => {
 
               {/* About Content */}
               <div className="order-1 lg:order-2">
-                <motion.h3 
-                  className="text-3xl md:text-4xl font-bold text-foreground mb-6"
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ duration: 0.3 }}
-                >
+                <motion.h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6" whileHover={{
+                scale: 1.02
+              }} transition={{
+                duration: 0.3
+              }}>
                   Quem <span className="bg-gradient-primary bg-clip-text text-transparent">Somos</span>
                 </motion.h3>
                 <div className="space-y-4 text-muted-foreground">
@@ -228,9 +228,7 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Information */}
-          <motion.div variants={itemVariants}>
-            <ContactInfo onWhatsAppClick={openWhatsApp} />
-          </motion.div>
+          
         </div>
       </motion.div>
     </section>;
