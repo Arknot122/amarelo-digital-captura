@@ -74,10 +74,13 @@ const Footer = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="w-12 h-12 bg-gradient-yellow rounded-xl flex items-center justify-center shadow-cyber-glow">
-                      <span className="text-primary-foreground font-bold text-xl">MP</span>
-                    </div>
-                    <span className="text-2xl font-bold text-foreground">MP Assessoria Digital</span>
+                    <motion.img 
+                      src="/mp-logo.png"
+                      alt="MP Assessoria Digital"
+                      className="h-16 w-auto"
+                      whileHover={{ rotate: 5 }}
+                      transition={{ duration: 0.3 }}
+                    />
                   </motion.div>
                   <p className="text-muted-foreground mb-8 max-w-md leading-relaxed">
                     Transformamos negócios através de estratégias digitais eficazes. 

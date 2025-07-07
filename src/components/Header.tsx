@@ -31,18 +31,17 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <motion.div 
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-3"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <motion.div 
-                className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.5 }}
-              >
-                <span className="text-primary-foreground font-bold text-lg">MP</span>
-              </motion.div>
-              <span className="text-xl font-bold text-foreground">MP Assessoria Digital</span>
+              <motion.img 
+                src="/mp-logo.png"
+                alt="MP Assessoria Digital"
+                className="h-10 w-auto"
+                whileHover={{ rotate: 5 }}
+                transition={{ duration: 0.3 }}
+              />
             </motion.div>
             
             <nav className="hidden md:flex items-center space-x-8">
