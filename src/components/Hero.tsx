@@ -5,9 +5,18 @@ import FullTypewriter from "@/components/FullTypewriter";
 import ParticleSystem from "@/components/ParticleSystem";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
   const { scrollProgress } = useScrollAnimation();
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -25,13 +34,13 @@ const Hero = () => {
         fourthColor="255, 241, 118"
         fifthColor="255, 238, 88"
         pointerColor="255, 237, 36"
-        size="80%"
+        size={isMobile ? "60%" : "80%"}
         blendingValue="multiply"
         containerClassName="absolute inset-0"
-        interactive={true}
+        interactive={!isMobile}
       />
       
-      <ParticleSystem count={30} className="opacity-60" />
+      <ParticleSystem count={isMobile ? 15 : 30} className="opacity-60" />
       
       <motion.div 
         className="relative z-10 min-h-screen flex items-center justify-center px-4"
@@ -58,7 +67,7 @@ const Hero = () => {
                   { word: "EMPRESA", className: "bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent" },
                   { word: "ASSESSORIA", className: "bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent" }
                 ]}
-                speed={100}
+                speed={isMobile ? 150 : 100}
               />
             </motion.h1>
             
@@ -66,7 +75,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 10.5 }}
+              transition={{ duration: 0.8, delay: isMobile ? 14.5 : 10.5 }}
             >
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}

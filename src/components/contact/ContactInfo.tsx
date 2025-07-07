@@ -13,6 +13,7 @@ const ContactInfo = ({
       className="bg-transparent p-0 h-auto w-full" 
       containerClassName="rounded-xl" 
       borderClassName="h-20 w-20 opacity-[0.8] bg-[radial-gradient(hsl(var(--primary))_40%,transparent_60%)]"
+      as="div"
     >
       <div className="p-8 space-y-6">
         <div className="text-center mb-8">

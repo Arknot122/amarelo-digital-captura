@@ -53,7 +53,7 @@ const ParticleSystem = ({ count = 20, className = '' }: ParticleSystemProps) => 
         const dy = mouseRef.current.y - particle.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
         
-        if (distance < 100) {
+        if (distance < 100 && distance > 0) {
           const force = (100 - distance) / 100;
           particle.vx += (dx / distance) * force * 0.01;
           particle.vy += (dy / distance) * force * 0.01;
@@ -62,17 +62,19 @@ const ParticleSystem = ({ count = 20, className = '' }: ParticleSystemProps) => 
         particle.x += particle.vx;
         particle.y += particle.vy;
 
-        // Boundary conditions
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+        // Boundary conditions with finite value checks
+        if (!isFinite(particle.x) || particle.x < 0 || particle.x > canvas.width) {
+          particle.x = Math.max(0, Math.min(canvas.width, Math.random() * canvas.width));
+          particle.vx *= -1;
+        }
+        if (!isFinite(particle.y) || particle.y < 0 || particle.y > canvas.height) {
+          particle.y = Math.max(0, Math.min(canvas.height, Math.random() * canvas.height));
+          particle.vy *= -1;
+        }
 
-        // Keep particles in bounds
-        particle.x = Math.max(0, Math.min(canvas.width, particle.x));
-        particle.y = Math.max(0, Math.min(canvas.height, particle.y));
-
-        // Damping
-        particle.vx *= 0.99;
-        particle.vy *= 0.99;
+        // Damping with finite checks
+        if (isFinite(particle.vx)) particle.vx *= 0.99;
+        if (isFinite(particle.vy)) particle.vy *= 0.99;
       });
     };
 
@@ -80,10 +82,15 @@ const ParticleSystem = ({ count = 20, className = '' }: ParticleSystemProps) => 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       particlesRef.current.forEach((particle) => {
+        // Ensure finite values for gradient
+        if (!isFinite(particle.x) || !isFinite(particle.y) || !isFinite(particle.size)) {
+          return;
+        }
+        
         // Create gradient for particle
         const gradient = ctx.createRadialGradient(
           particle.x, particle.y, 0,
-          particle.x, particle.y, particle.size * 2
+          particle.x, particle.y, Math.max(1, particle.size * 2)
         );
         gradient.addColorStop(0, `hsla(55, 100%, 58%, ${particle.opacity})`);
         gradient.addColorStop(1, `hsla(45, 100%, 65%, 0)`);
