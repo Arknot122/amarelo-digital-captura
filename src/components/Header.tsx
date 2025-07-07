@@ -38,9 +38,13 @@ const Header = () => {
               <motion.img 
                 src="/mp-logo.png"
                 alt="MP Assessoria Digital"
-                className="h-10 w-auto"
+                className="h-10 w-auto object-contain"
                 whileHover={{ rotate: 5 }}
                 transition={{ duration: 0.3 }}
+                onError={(e) => {
+                  console.error('Erro ao carregar logo:', e);
+                  e.currentTarget.style.display = 'none';
+                }}
               />
             </motion.div>
             

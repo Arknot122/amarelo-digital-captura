@@ -77,9 +77,13 @@ const Footer = () => {
                     <motion.img 
                       src="/mp-logo.png"
                       alt="MP Assessoria Digital"
-                      className="h-16 w-auto"
+                      className="h-16 w-auto object-contain"
                       whileHover={{ rotate: 5 }}
                       transition={{ duration: 0.3 }}
+                      onError={(e) => {
+                        console.error('Erro ao carregar logo no footer:', e);
+                        e.currentTarget.style.display = 'none';
+                      }}
                     />
                   </motion.div>
                   <p className="text-muted-foreground mb-8 max-w-md leading-relaxed">
