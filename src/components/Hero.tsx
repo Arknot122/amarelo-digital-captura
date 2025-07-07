@@ -28,9 +28,9 @@ const Hero = () => {
       <div className="relative z-10 min-h-screen flex items-center justify-center">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
-              Pare de perder tempo com Agências de Marketing, sua 
-              <span className="bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent"> EMPRESA</span> precisa de uma 
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl px-4">
+              Pare de perder tempo com Agências de Marketing,<br className="hidden sm:block" /> sua 
+              <span className="bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent"> EMPRESA</span><br className="sm:hidden" /> precisa de uma 
               <span className="bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent"> ASSESSORIA</span>
             </h1>
             
