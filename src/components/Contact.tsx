@@ -1,53 +1,10 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
-import { useToast } from "@/hooks/use-toast";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import ContactForm from "./contact/ContactForm";
 import ContactInfo from "./contact/ContactInfo";
 import ContactGuarantee from "./contact/ContactGuarantee";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    company: "",
-    service: "",
-    message: ""
-  });
-  const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
   const { ref, inView } = useScrollAnimation();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    toast({
-      title: "Mensagem enviada com sucesso!",
-      description: "Nossa equipe entrará em contato em breve.",
-    });
-
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      service: "",
-      message: ""
-    });
-    setIsLoading(false);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
 
   const openWhatsApp = () => {
     const phone = "5511999999999"; // Replace with actual WhatsApp number
@@ -130,22 +87,15 @@ const Contact = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <motion.div variants={itemVariants}>
-            <ContactForm
-              formData={formData}
-              isLoading={isLoading}
-              onSubmit={handleSubmit}
-              onChange={handleChange}
-            />
-          </motion.div>
-
-          {/* Contact Information */}
-          <motion.div className="space-y-8" variants={itemVariants}>
-            <ContactInfo onWhatsAppClick={openWhatsApp} />
-            <ContactGuarantee />
-          </motion.div>
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <motion.div variants={itemVariants}>
+              <ContactInfo onWhatsAppClick={openWhatsApp} />
+            </motion.div>
+            <motion.div variants={itemVariants}>
+              <ContactGuarantee />
+            </motion.div>
+          </div>
         </div>
       </motion.div>
     </section>
