@@ -179,7 +179,7 @@ const Contact = () => {
                             onChange={handleChange}
                             required
                             placeholder="Seu nome completo"
-                            className="backdrop-blur-sm bg-background/50 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 hover:shadow-glow/50"
+                            className="backdrop-blur-sm bg-background/50 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 hover:shadow-lg"
                           />
                         </div>
                       </motion.div>
@@ -197,7 +197,7 @@ const Contact = () => {
                             onChange={handleChange}
                             required
                             placeholder="seu@email.com"
-                            className="backdrop-blur-sm bg-background/50 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 hover:shadow-glow/50"
+                            className="backdrop-blur-sm bg-background/50 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 hover:shadow-lg"
                           />
                           <Mail className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                         </div>
@@ -217,7 +217,7 @@ const Contact = () => {
                             onChange={handleChange}
                             required
                             placeholder="(11) 99999-9999"
-                            className="backdrop-blur-sm bg-background/50 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 hover:shadow-glow/50"
+                            className="backdrop-blur-sm bg-background/50 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 hover:shadow-lg"
                           />
                           <Phone className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                         </div>
@@ -233,7 +233,7 @@ const Contact = () => {
                           value={formData.company}
                           onChange={handleChange}
                           placeholder="Nome da sua empresa"
-                          className="backdrop-blur-sm bg-background/50 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 hover:shadow-glow/50"
+                          className="backdrop-blur-sm bg-background/50 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 hover:shadow-lg"
                         />
                       </motion.div>
                     </div>
@@ -247,7 +247,7 @@ const Contact = () => {
                         name="service"
                         value={formData.service}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 border border-border/50 rounded-md backdrop-blur-sm bg-background/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300 hover:shadow-glow/50"
+                        className="w-full px-3 py-2 border border-border/50 rounded-md backdrop-blur-sm bg-background/50 text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300 hover:shadow-lg"
                       >
                         <option value="">Selecione um serviço</option>
                         <option value="gestao-trafego">Gestão de Tráfego</option>
@@ -270,7 +270,7 @@ const Contact = () => {
                         onChange={handleChange}
                         rows={4}
                         placeholder="Conte-nos mais sobre seu projeto..."
-                        className="backdrop-blur-sm bg-background/50 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 hover:shadow-glow/50 resize-none"
+                        className="backdrop-blur-sm bg-background/50 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 hover:shadow-lg resize-none"
                       />
                     </motion.div>
 
@@ -381,15 +381,12 @@ const Contact = () => {
               containerClassName="rounded-xl"
               borderClassName="h-20 w-20 opacity-[0.8] bg-[radial-gradient(hsl(var(--primary))_40%,transparent_60%)]"
             >
-              <motion.div
-                className="bg-gradient-primary text-primary-foreground rounded-xl p-8 h-full w-full shadow-glow relative overflow-hidden"
+               <motion.div
+                className="bg-gradient-primary text-primary-foreground rounded-xl p-8 h-full w-full shadow-lg relative overflow-hidden"
                 whileHover={{
-                  rotateX: 2,
-                  rotateY: 2,
-                  scale: 1.05,
+                  scale: 1.02,
                   transition: { type: "spring", stiffness: 300, damping: 20 }
                 }}
-                style={{ transformStyle: "preserve-3d" }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-bright/20 to-yellow-warm/10 rounded-xl" />
                 

@@ -87,7 +87,7 @@ const Footer = () => {
                     {socialIcons.map((social, index) => (
                       <motion.div
                         key={index}
-                        className="w-12 h-12 bg-yellow-bright/10 rounded-xl flex items-center justify-center hover:bg-yellow-bright/20 transition-all duration-300 cursor-pointer shadow-yellow-glow"
+                        className="w-12 h-12 bg-yellow-bright/10 rounded-xl flex items-center justify-center hover:bg-yellow-bright/20 transition-all duration-300 cursor-pointer shadow-lg"
                         whileHover={{ 
                           scale: 1.2, 
                           rotateZ: 360,
@@ -146,10 +146,9 @@ const Footer = () => {
                         >
                           <motion.div
                             className="p-2 rounded-lg bg-yellow-bright/10 group-hover:bg-yellow-bright/20 transition-all duration-300"
-                            whileHover={{ 
-                              rotate: 360,
-                              boxShadow: "0 0 20px hsl(var(--yellow-bright) / 0.3)"
-                            }}
+                          whileHover={{ 
+                            rotate: 360
+                          }}
                             transition={{ duration: 0.5 }}
                           >
                             <link.icon size={16} className="text-yellow-bright" />
@@ -202,8 +201,7 @@ const Footer = () => {
                       <motion.div
                         className="p-2 rounded-lg bg-yellow-bright/10 group-hover:bg-yellow-bright/20 transition-all duration-300"
                         whileHover={{ 
-                          rotate: 360,
-                          boxShadow: "0 0 20px hsl(var(--yellow-bright) / 0.3)"
+                          rotate: 360
                         }}
                         transition={{ duration: 0.5 }}
                       >
@@ -223,8 +221,7 @@ const Footer = () => {
                       <motion.div
                         className="p-2 rounded-lg bg-yellow-bright/10 group-hover:bg-yellow-bright/20 transition-all duration-300"
                         whileHover={{ 
-                          rotate: 360,
-                          boxShadow: "0 0 20px hsl(var(--yellow-bright) / 0.3)"
+                          rotate: 360
                         }}
                         transition={{ duration: 0.5 }}
                       >
@@ -242,8 +239,7 @@ const Footer = () => {
                       <motion.div
                         className="p-2 rounded-lg bg-yellow-bright/10 group-hover:bg-yellow-bright/20 transition-all duration-300"
                         whileHover={{ 
-                          rotate: 360,
-                          boxShadow: "0 0 20px hsl(var(--yellow-bright) / 0.3)"
+                          rotate: 360
                         }}
                         transition={{ duration: 0.5 }}
                       >

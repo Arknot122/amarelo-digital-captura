@@ -80,7 +80,9 @@ export default {
 				'card': 'var(--shadow-card)',
 				'glow': 'var(--shadow-glow)',
 				'cyber': 'var(--shadow-cyber)',
-				'neon': 'var(--shadow-neon)'
+				'neon': 'var(--shadow-neon)',
+				'yellow-glow': '0 0 20px hsl(var(--yellow-bright) / 0.3)',
+				'cyber-glow': '0 0 30px hsl(var(--yellow-bright) / 0.4)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)'
