@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown } from "lucide-react";
 import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
+import Typewriter from "@/components/Typewriter";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -29,9 +30,16 @@ const Hero = () => {
         <div className="container mx-auto max-w-6xl text-center">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl text-center break-words">
-              Pare de perder tempo com Agências de Marketing,<br className="hidden sm:block" /> sua 
-              <span className="bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent"> EMPRESA</span><br className="sm:hidden" /> precisa de uma 
-              <span className="bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent"> ASSESSORIA</span>
+              <Typewriter 
+                text="Pare de perder tempo com Agências de Marketing, sua "
+                speed={60}
+              />
+              <span className="bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent">EMPRESA</span>
+              <Typewriter 
+                text=" precisa de uma "
+                speed={60}
+              />
+              <span className="bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent">ASSESSORIA</span>
             </h1>
             
             <p className="text-lg md:text-xl lg:text-2xl text-white/80 mb-8 max-w-2xl mx-auto drop-shadow-lg">
