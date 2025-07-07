@@ -24,7 +24,7 @@ const ContactInfo = ({ onWhatsAppClick }: ContactInfoProps) => {
         }}
         style={{ transformStyle: "preserve-3d" }}
       >
-        <div className="absolute inset-0 bg-gradient-primary opacity-5 rounded-xl" />
+        
         
         <div className="relative z-10">
           <h3 className="text-2xl font-bold text-foreground mb-6">
