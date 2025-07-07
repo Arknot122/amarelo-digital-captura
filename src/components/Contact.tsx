@@ -173,6 +173,54 @@ const Contact = () => {
           </motion.p>
         </motion.div>
 
+        {/* About Us Section */}
+        <motion.div className="mb-16" variants={itemVariants}>
+          <div className="bg-card/50 backdrop-blur-xl border border-border/50 rounded-3xl p-8 lg:p-12 hover:border-primary/30 transition-all duration-300">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              {/* Photo Placeholder */}
+              <motion.div 
+                className="order-2 lg:order-1"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="aspect-square lg:aspect-[4/3] bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl border-2 border-dashed border-primary/30 flex items-center justify-center group hover:border-primary/50 transition-all duration-300">
+                  <div className="text-center text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+                      <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <p className="text-sm font-medium">Foto dos Fundadores</p>
+                    <p className="text-xs mt-1 opacity-70">Em breve</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* About Content */}
+              <div className="order-1 lg:order-2">
+                <motion.h3 
+                  className="text-3xl md:text-4xl font-bold text-foreground mb-6"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Quem <span className="bg-gradient-primary bg-clip-text text-transparent">Somos</span>
+                </motion.h3>
+                <div className="space-y-4 text-muted-foreground">
+                  <p className="text-lg leading-relaxed">
+                    A <strong className="text-foreground">MP Assessoria Digital</strong> foi fundada com a missão de transformar negócios através de estratégias digitais inovadoras e eficazes.
+                  </p>
+                  <p className="leading-relaxed">
+                    Nossos fundadores trazem anos de experiência em marketing digital, gestão de tráfego e automação, combinando conhecimento técnico com uma visão estratégica para entregar resultados excepcionais aos nossos clientes.
+                  </p>
+                  <p className="leading-relaxed">
+                    Acreditamos que cada negócio é único e merece uma abordagem personalizada. Por isso, trabalhamos lado a lado com nossos clientes para entender suas necessidades e desenvolver soluções que realmente fazem a diferença.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
@@ -180,7 +228,9 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Information */}
-          
+          <motion.div variants={itemVariants}>
+            <ContactInfo onWhatsAppClick={openWhatsApp} />
+          </motion.div>
         </div>
       </motion.div>
     </section>;
