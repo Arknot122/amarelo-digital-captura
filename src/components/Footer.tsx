@@ -4,7 +4,7 @@ import { Mail, Phone, Clock, Home, Users, Target, MessageCircle } from "lucide-r
 
 const Footer = () => {
   const openWhatsApp = () => {
-    const phone = "5511999999999";
+    const phone = "5562992672577";
     const message = "Olá! Gostaria de saber mais sobre os serviços da MP Assessoria Digital.";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -227,9 +227,9 @@ const Footer = () => {
                       >
                         <Phone size={16} className="text-yellow-bright" />
                       </motion.div>
-                      <span className="text-sm text-muted-foreground group-hover:text-yellow-bright transition-colors duration-300">
-                        (11) 99999-9999
-                      </span>
+                       <span className="text-sm text-muted-foreground group-hover:text-yellow-bright transition-colors duration-300">
+                         (62) 99267-2577
+                       </span>
                     </motion.div>
                     <motion.div 
                       className="flex items-center space-x-3 group"

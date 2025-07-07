@@ -106,7 +106,7 @@ const Contact = () => {
     }
   };
   const openWhatsApp = () => {
-    const phone = "5511987654321"; // Número atualizado
+    const phone = "5562992672577"; // Número atualizado
     const message = "Olá! Gostaria de saber mais sobre os serviços da MP Assessoria Digital.";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
