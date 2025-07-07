@@ -47,13 +47,13 @@ const ContactInfo = ({ onWhatsAppClick }: ContactInfoProps) => {
                 borderClassName="h-14 w-14 opacity-[0.6] bg-[radial-gradient(hsl(var(--primary))_40%,transparent_60%)]"
                 onClick={onWhatsAppClick}
               >
-                <motion.div
-                  className="bg-gradient-primary text-primary-foreground font-medium py-3 px-4 rounded-lg w-full h-full flex items-center justify-start transition-all duration-300"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Phone className="mr-2 h-4 w-4" />
-                  (11) 99999-9999
+                  <motion.div
+                    className="bg-gradient-primary text-primary-foreground font-medium py-3 px-4 rounded-lg w-full h-full flex items-center justify-start transition-all duration-300"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Phone className="mr-2 h-4 w-4" />
+                    (11) 98765-4321
                 </motion.div>
               </MovingBorderButton>
             </motion.div>

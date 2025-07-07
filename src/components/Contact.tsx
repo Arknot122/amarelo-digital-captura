@@ -1,13 +1,120 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
+import { useToast } from "@/hooks/use-toast";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import ContactForm from "./contact/ContactForm";
 import ContactInfo from "./contact/ContactInfo";
 import ContactGuarantee from "./contact/ContactGuarantee";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    service: "",
+    message: ""
+  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState<{
+    name?: string;
+    email?: string;
+    phone?: string;
+    message?: string;
+  }>({});
+  const { toast } = useToast();
   const { ref, inView } = useScrollAnimation();
 
+  const validateForm = () => {
+    const newErrors: typeof errors = {};
+    
+    if (!formData.name.trim()) {
+      newErrors.name = "Nome é obrigatório";
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = "E-mail é obrigatório";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "E-mail inválido";
+    }
+    
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Telefone é obrigatório";
+    } else if (!/^[\d\s\(\)\-\+]+$/.test(formData.phone)) {
+      newErrors.phone = "Telefone inválido";
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = "Mensagem é obrigatória";
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = "Mensagem deve ter pelo menos 10 caracteres";
+    }
+    
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      toast({
+        title: "Erro no formulário",
+        description: "Por favor, corrija os erros antes de enviar.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setIsLoading(true);
+
+    try {
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      toast({
+        title: "Mensagem enviada com sucesso!",
+        description: "Nossa equipe entrará em contato em até 24 horas.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        message: ""
+      });
+      setErrors({});
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Tente novamente ou entre em contato pelo WhatsApp.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    
+    // Clear error when user starts typing
+    if (errors[name as keyof typeof errors]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: undefined
+      }));
+    }
+  };
+
   const openWhatsApp = () => {
-    const phone = "5511999999999"; // Replace with actual WhatsApp number
+    const phone = "5511987654321"; // Número atualizado
     const message = "Olá! Gostaria de saber mais sobre os serviços da MP Assessoria Digital.";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -87,15 +194,23 @@ const Contact = () => {
           </motion.p>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <motion.div variants={itemVariants}>
-              <ContactInfo onWhatsAppClick={openWhatsApp} />
-            </motion.div>
-            <motion.div variants={itemVariants}>
-              <ContactGuarantee />
-            </motion.div>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Contact Form */}
+          <motion.div variants={itemVariants}>
+            <ContactForm
+              formData={formData}
+              isLoading={isLoading}
+              onSubmit={handleSubmit}
+              onChange={handleChange}
+              errors={errors}
+            />
+          </motion.div>
+
+          {/* Contact Information */}
+          <motion.div className="space-y-8" variants={itemVariants}>
+            <ContactInfo onWhatsAppClick={openWhatsApp} />
+            <ContactGuarantee />
+          </motion.div>
         </div>
       </motion.div>
     </section>
