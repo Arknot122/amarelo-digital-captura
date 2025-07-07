@@ -29,7 +29,6 @@ const ContactInfo = ({ onWhatsAppClick }: ContactInfoProps) => {
         <div className="relative z-10">
           <motion.h3 
             className="text-2xl font-bold text-foreground mb-6"
-            whileHover={{ color: "hsl(var(--primary))" }}
           >
             Fale Conosco Agora
           </motion.h3>

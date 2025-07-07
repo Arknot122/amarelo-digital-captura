@@ -47,7 +47,6 @@ const ContactForm = ({ formData, isLoading, onSubmit, onChange, errors }: Contac
         <div className="relative z-10">
           <motion.h3 
             className="text-2xl font-bold text-foreground mb-2"
-            whileHover={{ color: "hsl(var(--primary))" }}
           >
             Solicite uma Proposta
           </motion.h3>
