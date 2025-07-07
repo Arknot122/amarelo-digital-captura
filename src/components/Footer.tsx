@@ -114,10 +114,10 @@ const Footer = () => {
           >
             <MovingButton
               borderRadius="2rem"
-              className="h-full w-full bg-background/10 backdrop-blur-xl border-0 text-foreground p-6"
+              className="h-full w-full bg-background/10 backdrop-blur-xl border-0 text-foreground p-8"
               containerClassName="h-full w-full"
               duration={6000}
-              borderClassName="h-20 w-20 opacity-60 bg-[radial-gradient(hsl(var(--yellow-soft))_40%,hsl(var(--yellow-light))_60%,transparent_80%)]"
+              borderClassName="h-24 w-24 opacity-60 bg-[radial-gradient(hsl(var(--yellow-bright))_40%,hsl(var(--yellow-warm))_60%,transparent_80%)]"
             >
               <motion.div 
                 className="relative h-full"
@@ -174,10 +174,10 @@ const Footer = () => {
           >
             <MovingButton
               borderRadius="2rem"
-              className="h-full w-full bg-background/10 backdrop-blur-xl border-0 text-foreground p-6"
+              className="h-full w-full bg-background/10 backdrop-blur-xl border-0 text-foreground p-8"
               containerClassName="h-full w-full"
               duration={7000}
-              borderClassName="h-20 w-20 opacity-60 bg-[radial-gradient(hsl(var(--yellow-gold))_40%,hsl(var(--yellow-amber))_60%,transparent_80%)]"
+              borderClassName="h-24 w-24 opacity-60 bg-[radial-gradient(hsl(var(--yellow-bright))_40%,hsl(var(--yellow-warm))_60%,transparent_80%)]"
             >
               <motion.div 
                 className="relative h-full"
