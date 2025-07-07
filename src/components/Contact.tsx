@@ -4,7 +4,6 @@ import { useToast } from "@/hooks/use-toast";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ContactForm from "./contact/ContactForm";
 import ContactInfo from "./contact/ContactInfo";
-import ContactGuarantee from "./contact/ContactGuarantee";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -207,9 +206,8 @@ const Contact = () => {
           </motion.div>
 
           {/* Contact Information */}
-          <motion.div className="space-y-8" variants={itemVariants}>
+          <motion.div variants={itemVariants}>
             <ContactInfo onWhatsAppClick={openWhatsApp} />
-            <ContactGuarantee />
           </motion.div>
         </div>
       </motion.div>
