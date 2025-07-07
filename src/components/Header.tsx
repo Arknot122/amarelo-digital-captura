@@ -3,14 +3,37 @@ import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import MobileMenu from "@/components/MobileMenu";
 import ScrollProgress from "@/components/ScrollProgress";
+import { removeBackground, loadImage } from "@/utils/backgroundRemoval";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const { scrollY } = useScrollAnimation();
+  const [logoWithoutBg, setLogoWithoutBg] = useState<string | null>(null);
   
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const processLogo = async () => {
+      try {
+        // Load the original logo
+        const response = await fetch('/mp-logo-center.png');
+        const blob = await response.blob();
+        const img = await loadImage(blob);
+        
+        // Remove background
+        const processedBlob = await removeBackground(img);
+        const processedUrl = URL.createObjectURL(processedBlob);
+        setLogoWithoutBg(processedUrl);
+      } catch (error) {
+        console.error('Error processing logo:', error);
+      }
+    };
+
+    processLogo();
+  }, []);
 
   const headerOpacity = Math.min(scrollY / 100, 0.95);
   const headerBlur = Math.min(scrollY / 10, 20);
@@ -19,9 +42,9 @@ const Header = () => {
     <>
       <ScrollProgress />
       <motion.header 
-        className="fixed top-0 w-full border-b border-border z-50 transition-all duration-300"
+        className="fixed top-0 w-full border-b border-gray-200 z-50 transition-all duration-300"
         style={{
-          backgroundColor: `hsla(var(--background) / ${headerOpacity})`,
+          backgroundColor: `rgba(255, 255, 255, ${headerOpacity})`,
           backdropFilter: `blur(${headerBlur}px)`,
         }}
         initial={{ y: -100 }}
@@ -40,7 +63,7 @@ const Header = () => {
               transition={{ duration: 0.2 }}
             >
               <motion.img 
-                src="/mp-logo-center.png"
+                src={logoWithoutBg || "/mp-logo-center.png"}
                 alt="MP Assessoria Digital"
                 className="h-12 w-auto object-contain"
                 whileHover={{ rotate: 5 }}
@@ -62,7 +85,7 @@ const Header = () => {
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-foreground hover:text-primary transition-colors relative"
+                  className="text-gray-700 hover:text-primary transition-colors relative"
                   whileHover={{ scale: 1.1 }}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
