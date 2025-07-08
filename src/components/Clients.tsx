@@ -9,10 +9,10 @@ const Clients = () => {
   const clients = [
     { name: "Hotel Areião", sector: "Hoteleiro", result: "+150 reservas", gradient: "from-yellow-bright/20 to-yellow-warm/20" },
     { name: "Motel Solarium", sector: "Hospedagem", result: "+200 reservas", gradient: "from-yellow-soft/20 to-yellow-light/20" },
-    { name: "FitLife", sector: "Fitness", result: "+300% leads qualificados", gradient: "from-yellow-gold/20 to-yellow-bright/20" },
-    { name: "EduPlatform", sector: "Educação", result: "+180% matrículas", gradient: "from-yellow-amber/20 to-primary/20" },
-    { name: "FoodChain", sector: "Alimentício", result: "+120% delivery", gradient: "from-yellow-warm/20 to-yellow-soft/20" },
-    { name: "HealthCare", sector: "Saúde", result: "+90% agendamentos", gradient: "from-yellow-light/20 to-yellow-gold/20" }
+    { name: "Master Canres", sector: "Casa de Carnes", result: "+30% de Faturamento", gradient: "from-yellow-gold/20 to-yellow-bright/20" },
+    { name: "Pacheco Solar", sector: "Indústria Solar", result: "+47% de aumento nas vendas", gradient: "from-yellow-amber/20 to-primary/20" },
+    { name: "Doce Paladar", sector: "Alimentício", result: "+R$200mil de Faturamento", gradient: "from-yellow-warm/20 to-yellow-soft/20" },
+    { name: "Sanches Center Pisos", sector: "Construção", result: "+25% de Faturamento", gradient: "from-yellow-light/20 to-yellow-gold/20" }
   ];
 
   const testimonials = [
