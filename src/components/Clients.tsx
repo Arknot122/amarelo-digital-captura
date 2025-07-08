@@ -186,9 +186,16 @@ const Clients = () => {
             Empresas que confiam em nosso trabalho
           </h3>
           <div className="flex flex-wrap justify-center items-center gap-8">
-            {Array.from({ length: 6 }, (_, index) => (
+            <div className="w-32 h-20 bg-muted/30 border-2 border-dashed border-muted-foreground/30 rounded-lg flex items-center justify-center hover:border-primary/50 transition-colors p-2">
+              <img 
+                src="/lovable-uploads/ed4b9472-da25-44b3-b69c-51c673e9db24.png" 
+                alt="Solarium Logo" 
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+            {Array.from({ length: 5 }, (_, index) => (
               <div 
-                key={index} 
+                key={index + 1} 
                 className="w-32 h-20 bg-muted/30 border-2 border-dashed border-muted-foreground/30 rounded-lg flex items-center justify-center hover:border-primary/50 transition-colors"
               >
                 <span className="text-xs text-muted-foreground/60 font-medium">LOGO</span>
