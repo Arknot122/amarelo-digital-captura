@@ -62,7 +62,7 @@ const Header = () => {
             }, {
               id: "contato",
               label: "Contato"
-            }].map((item, index) => <motion.button key={item.id} onClick={() => scrollToSection(item.id)} className="text-foreground hover:text-primary transition-colors relative" whileHover={{
+            }].map((item, index) => <motion.button key={item.id} onClick={() => scrollToSection(item.id)} className="text-black hover:text-primary transition-colors relative" whileHover={{
               scale: 1.1
             }} initial={{
               opacity: 0,
