@@ -74,17 +74,20 @@ const Footer = () => {
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <motion.img 
-                      src="/lovable-uploads/ef560a35-f193-43f7-9822-f6f1372b6a94.png"
-                      alt="MIP Assessoria Digital"
-                      className="h-16 w-auto object-contain"
-                      whileHover={{ rotate: 5 }}
-                      transition={{ duration: 0.3 }}
-                      onError={(e) => {
-                        console.error('Erro ao carregar logo no footer:', e);
-                        e.currentTarget.style.display = 'none';
-                      }}
-                    />
+                    <picture>
+                      <source srcSet="/mp-logo-center.webp" type="image/webp" />
+                      <motion.img 
+                        src="/mp-logo-center.png"
+                        alt="MIP Assessoria Digital"
+                        className="h-16 w-auto object-contain"
+                        whileHover={{ rotate: 5 }}
+                        transition={{ duration: 0.3 }}
+                        onError={(e) => {
+                          console.error('Erro ao carregar logo no footer:', e);
+                          e.currentTarget.style.display = 'none';
+                        }}
+                      />
+                    </picture>
                   </motion.div>
                   <p className="text-muted-foreground mb-8 max-w-md leading-relaxed">
                     Transformamos negócios através de estratégias digitais eficazes. 

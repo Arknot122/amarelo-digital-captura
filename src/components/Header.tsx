@@ -35,17 +35,20 @@ const Header = () => {
           }} transition={{
             duration: 0.2
           }}>
-              <motion.img 
-                src="/lovable-uploads/ef560a35-f193-43f7-9822-f6f1372b6a94.png"
-                alt="MIP Assessoria Digital"
-                className="h-12 w-auto object-contain"
-                whileHover={{ rotate: 5 }}
-                transition={{ duration: 0.3 }}
-                onError={(e) => {
-                  console.error('Erro ao carregar logo no header:', e);
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
+              <picture>
+                <source srcSet="/mp-logo-center.webp" type="image/webp" />
+                <motion.img 
+                  src="/mp-logo-center.png"
+                  alt="MIP Assessoria Digital"
+                  className="h-12 w-auto object-contain"
+                  whileHover={{ rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                  onError={(e) => {
+                    console.error('Erro ao carregar logo no header:', e);
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
+              </picture>
             </motion.div>
             
             <nav className="hidden md:flex items-center space-x-8">
