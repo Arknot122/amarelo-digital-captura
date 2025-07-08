@@ -35,14 +35,17 @@ const Header = () => {
           }} transition={{
             duration: 0.2
           }}>
-              <motion.div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center" whileHover={{
-              rotate: 360
-            }} transition={{
-              duration: 0.5
-            }}>
-                <span className="text-primary-foreground font-bold text-lg">MP</span>
-              </motion.div>
-              <span className="text-xl font-bold text-foreground">MP Assessoria Digital</span>
+              <motion.img 
+                src="/lovable-uploads/ef560a35-f193-43f7-9822-f6f1372b6a94.png"
+                alt="MIP Assessoria Digital"
+                className="h-12 w-auto object-contain"
+                whileHover={{ rotate: 5 }}
+                transition={{ duration: 0.3 }}
+                onError={(e) => {
+                  console.error('Erro ao carregar logo no header:', e);
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
             </motion.div>
             
             <nav className="hidden md:flex items-center space-x-8">

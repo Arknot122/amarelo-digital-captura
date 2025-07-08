@@ -107,7 +107,7 @@ const Contact = () => {
   };
   const openWhatsApp = () => {
     const phone = "5562992672577"; // Número atualizado
-    const message = "Olá! Gostaria de saber mais sobre os serviços da MP Assessoria Digital.";
+    const message = "Olá! Gostaria de saber mais sobre os serviços da MIP Assessoria Digital.";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
@@ -192,7 +192,7 @@ const Contact = () => {
                 </motion.h3>
                 <div className="space-y-4 text-muted-foreground">
                   <p className="text-lg leading-relaxed">
-                    A <strong className="text-foreground">MP Assessoria Digital</strong> foi fundada com a missão de transformar negócios através de estratégias digitais inovadoras e eficazes.
+                    A <strong className="text-foreground">MIP Assessoria Digital</strong> foi fundada com a missão de transformar negócios através de estratégias digitais inovadoras e eficazes.
                   </p>
                   <p className="leading-relaxed">
                     Nossos fundadores trazem anos de experiência em marketing digital, gestão de tráfego e automação, combinando conhecimento técnico com uma visão estratégica para entregar resultados excepcionais aos nossos clientes.

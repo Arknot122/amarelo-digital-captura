@@ -19,7 +19,7 @@ const Clients = () => {
     {
       name: "Isabela Teles",
       company: "Master Carnes",
-      text: "A MP Assessoria transformou completamente nossa estratégia digital. Resultados incríveis em apenas 3 meses!",
+      text: "A MIP Assessoria transformou completamente nossa estratégia digital. Resultados incríveis em apenas 3 meses!",
       image: "👩‍💼"
     },
     {

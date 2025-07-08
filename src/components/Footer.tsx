@@ -5,7 +5,7 @@ import { Mail, Phone, Clock, Home, Users, Target, MessageCircle } from "lucide-r
 const Footer = () => {
   const openWhatsApp = () => {
     const phone = "5562992672577";
-    const message = "Olá! Gostaria de saber mais sobre os serviços da MP Assessoria Digital.";
+    const message = "Olá! Gostaria de saber mais sobre os serviços da MIP Assessoria Digital.";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
@@ -75,8 +75,8 @@ const Footer = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <motion.img 
-                      src="/mp-logo.png"
-                      alt="MP Assessoria Digital"
+                      src="/lovable-uploads/ef560a35-f193-43f7-9822-f6f1372b6a94.png"
+                      alt="MIP Assessoria Digital"
                       className="h-16 w-auto object-contain"
                       whileHover={{ rotate: 5 }}
                       transition={{ duration: 0.3 }}
@@ -289,7 +289,7 @@ const Footer = () => {
               whileHover={{ scale: 1.05, color: "hsl(var(--yellow-bright))" }}
               transition={{ duration: 0.3 }}
             >
-              © 2024 MP Assessoria Digital. Todos os direitos reservados.
+              © 2024 MIP Assessoria Digital. Todos os direitos reservados.
             </motion.p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <motion.a 

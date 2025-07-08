@@ -5,7 +5,7 @@ const WhatsAppButton = () => {
 
   const openWhatsApp = () => {
     const phone = "5562992672577"; // WhatsApp number
-    const message = "Olá! Gostaria de saber mais sobre os serviços da MP Assessoria Digital.";
+    const message = "Olá! Gostaria de saber mais sobre os serviços da MIP Assessoria Digital.";
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
   };
