@@ -193,14 +193,30 @@ const Clients = () => {
                 className="max-w-full max-h-full object-contain"
               />
             </div>
-            {Array.from({ length: 5 }, (_, index) => (
-              <div 
-                key={index + 1} 
-                className="w-32 h-20 bg-muted/30 border-2 border-dashed border-muted-foreground/30 rounded-lg flex items-center justify-center hover:border-primary/50 transition-colors"
-              >
-                <span className="text-xs text-muted-foreground/60 font-medium">LOGO</span>
-              </div>
-            ))}
+            {Array.from({ length: 5 }, (_, index) => {
+              if (index === 0) {
+                return (
+                  <div 
+                    key={index + 1} 
+                    className="w-32 h-20 bg-muted/30 border-2 border-dashed border-muted-foreground/30 rounded-lg flex items-center justify-center hover:border-primary/50 transition-colors p-2"
+                  >
+                    <img 
+                      src="/lovable-uploads/4bd90961-4491-46f6-a557-d80faf467070.png" 
+                      alt="Client Logo" 
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                );
+              }
+              return (
+                <div 
+                  key={index + 1} 
+                  className="w-32 h-20 bg-muted/30 border-2 border-dashed border-muted-foreground/30 rounded-lg flex items-center justify-center hover:border-primary/50 transition-colors"
+                >
+                  <span className="text-xs text-muted-foreground/60 font-medium">LOGO</span>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
