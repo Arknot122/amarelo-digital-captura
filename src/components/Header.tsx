@@ -18,7 +18,7 @@ const Header = () => {
   return <>
       <ScrollProgress />
       <motion.header className="fixed top-0 w-full border-b border-border z-50 transition-all duration-300" style={{
-      backgroundColor: `rgba(255,255,255,${headerOpacity})`,
+      backgroundColor: 'rgba(255,255,255,1)',
       backdropFilter: `blur(${headerBlur}px)`
     }} initial={{
       y: -100
@@ -30,26 +30,24 @@ const Header = () => {
     }}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <motion.div className="flex items-center space-x-2" whileHover={{
-            scale: 1.05
-          }} transition={{
-            duration: 0.2
-          }}>
-              <picture>
-                <source srcSet="/mp-logo-center.webp" type="image/webp" />
-                <motion.img 
-                  src="/mp-logo-center.png"
-                  alt="MIP Assessoria Digital"
-                  className="h-12 w-auto object-contain"
-                  whileHover={{ rotate: 5 }}
-                  transition={{ duration: 0.3 }}
-                  onError={(e) => {
-                    console.error('Erro ao carregar logo no header:', e);
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
-              </picture>
-            </motion.div>
+            <div className="flex-1 flex justify-center items-center">
+              <motion.div className="flex items-center" whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+                <picture>
+                  <source srcSet="/mp-logo-center.webp" type="image/webp" />
+                  <motion.img 
+                    src="/mp-logo-center.png"
+                    alt="MIP Assessoria Digital"
+                    className="h-12 w-auto object-contain"
+                    whileHover={{ rotate: 5 }}
+                    transition={{ duration: 0.3 }}
+                    onError={(e) => {
+                      console.error('Erro ao carregar logo no header:', e);
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                </picture>
+              </motion.div>
+            </div>
             
             <nav className="hidden md:flex items-center space-x-8">
               {[{
