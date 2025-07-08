@@ -236,6 +236,20 @@ const Clients = () => {
                   </div>
                 );
               }
+              if (index === 3) {
+                return (
+                  <div 
+                    key={index + 1} 
+                    className="w-32 h-20 bg-muted/30 border-2 border-dashed border-muted-foreground/30 rounded-lg flex items-center justify-center hover:border-primary/50 transition-colors p-2"
+                  >
+                    <img 
+                      src="/lovable-uploads/67f02529-0698-490e-9a37-09b7901458c4.png" 
+                      alt="Mundo das Bombas Logo" 
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                );
+              }
               return (
                 <div 
                   key={index + 1} 
