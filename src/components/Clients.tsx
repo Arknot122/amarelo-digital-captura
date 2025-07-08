@@ -7,8 +7,8 @@ const Clients = () => {
   const { ref, inView } = useScrollAnimation();
   
   const clients = [
-    { name: "TechCorp", sector: "Tecnologia", result: "+150% conversões", gradient: "from-yellow-bright/20 to-yellow-warm/20" },
-    { name: "BeautyBrand", sector: "Beleza", result: "+200% vendas online", gradient: "from-yellow-soft/20 to-yellow-light/20" },
+    { name: "Hotel Areião", sector: "Hoteleiro", result: "+150 reservas", gradient: "from-yellow-bright/20 to-yellow-warm/20" },
+    { name: "Motel Solarium", sector: "Hospedagem", result: "+200 reservas", gradient: "from-yellow-soft/20 to-yellow-light/20" },
     { name: "FitLife", sector: "Fitness", result: "+300% leads qualificados", gradient: "from-yellow-gold/20 to-yellow-bright/20" },
     { name: "EduPlatform", sector: "Educação", result: "+180% matrículas", gradient: "from-yellow-amber/20 to-primary/20" },
     { name: "FoodChain", sector: "Alimentício", result: "+120% delivery", gradient: "from-yellow-warm/20 to-yellow-soft/20" },
