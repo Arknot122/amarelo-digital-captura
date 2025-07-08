@@ -62,8 +62,14 @@ const Contact = () => {
     }
     setIsLoading(true);
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Envia os dados para o webhook do Make
+      await fetch("https://hook.us2.make.com/ioh725tn9ssv38ct9n24rxuhkvs5m5m2", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
+      });
       toast({
         title: "Mensagem enviada com sucesso!",
         description: "Nossa equipe entrará em contato em até 24 horas."
