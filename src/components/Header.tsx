@@ -18,7 +18,7 @@ const Header = () => {
   return <>
       <ScrollProgress />
       <motion.header className="fixed top-0 w-full border-b border-border z-50 transition-all duration-300" style={{
-      backgroundColor: `hsla(var(--background) / ${headerOpacity})`,
+      backgroundColor: `rgba(255,255,255,${headerOpacity})`,
       backdropFilter: `blur(${headerBlur}px)`
     }} initial={{
       y: -100
