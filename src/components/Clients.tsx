@@ -208,6 +208,20 @@ const Clients = () => {
                   </div>
                 );
               }
+              if (index === 1) {
+                return (
+                  <div 
+                    key={index + 1} 
+                    className="w-32 h-20 bg-muted/30 border-2 border-dashed border-muted-foreground/30 rounded-lg flex items-center justify-center hover:border-primary/50 transition-colors p-2"
+                  >
+                    <img 
+                      src="/lovable-uploads/c419b960-e482-47db-8646-1c304f1bc7ed.png" 
+                      alt="Pacheco Logo" 
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                );
+              }
               return (
                 <div 
                   key={index + 1} 
