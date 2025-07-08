@@ -222,6 +222,20 @@ const Clients = () => {
                   </div>
                 );
               }
+              if (index === 2) {
+                return (
+                  <div 
+                    key={index + 1} 
+                    className="w-32 h-20 bg-muted/30 border-2 border-dashed border-muted-foreground/30 rounded-lg flex items-center justify-center hover:border-primary/50 transition-colors p-2"
+                  >
+                    <img 
+                      src="/lovable-uploads/423d3c30-5ea8-432d-a367-618a70407c3d.png" 
+                      alt="Client Logo" 
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                );
+              }
               return (
                 <div 
                   key={index + 1} 
