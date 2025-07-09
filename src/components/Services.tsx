@@ -163,7 +163,7 @@ const Services = () => {
                       className="w-full mt-auto"
                     >
                       <a
-                        href={`https://wa.me/5562992672577?text=Olá! Gostaria de saber mais sobre o serviço de ${service.title}.`}
+                        href={`https://wa.me/5562992672577?text=Olá! Gostaria de saber mais sobre o serviço de ${encodeURIComponent(service.title)}.`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
