@@ -99,7 +99,7 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
                       key={item.id}
                       variants={itemVariants}
                       onClick={() => handleItemClick(item.id)}
-                      className="block w-full text-left py-4 px-2 text-lg font-medium text-foreground hover:text-primary transition-colors border-b border-border/50 hover:border-primary/50"
+                      className="block w-full text-left py-4 px-2 text-lg font-medium text-black hover:text-primary transition-colors border-b border-border/50 hover:border-primary/50"
                     >
                       {item.label}
                     </motion.button>
