@@ -68,7 +68,7 @@ const Hero = () => {
                 { word: "ASSESSORIA", className: "bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent" },
                 { word: "DIGITAL!", className: "bg-gradient-to-r from-primary to-yellow-300 bg-clip-text text-transparent" }
               ]}
-                speed={isMobile ? 120 : 100}
+                speed={isMobile ? 180 : 180}
               />
             </motion.h1>
             
