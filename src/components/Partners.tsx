@@ -3,7 +3,6 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Button as MovingButton } from "@/components/ui/moving-border";
 import kommoLogo from "@/assets/kommo-logo.png";
 import metaLogo from "@/assets/meta-logo.png";
-import googlePartnerLogo from "@/assets/google-partner-logo.png";
 import shopifyLogo from "@/assets/shopify-logo.png";
 
 const Partners = () => {
@@ -19,11 +18,6 @@ const Partners = () => {
       name: "Meta Ads",
       logo: metaLogo,
       description: "Publicidade Digital"
-    },
-    {
-      name: "Google Partner",
-      logo: googlePartnerLogo,
-      description: "Parceiro Certificado"
     },
     {
       name: "Shopify",
