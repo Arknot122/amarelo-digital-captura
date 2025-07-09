@@ -156,6 +156,20 @@ const Services = () => {
                         </motion.li>
                       ))}
                     </ul>
+                    <Button
+                      asChild
+                      variant="hero"
+                      size="lg"
+                      className="w-full mt-auto"
+                    >
+                      <a
+                        href={`https://wa.me/5562992672577?text=Olá! Gostaria de saber mais sobre o serviço de ${service.title}.`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Ver mais
+                      </a>
+                    </Button>
                   </div>
                 </MovingButton>
               </motion.div>
