@@ -76,7 +76,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: isMobile ? 14.5 : 10.5 }}
+              transition={{ duration: 0.8, delay: isMobile ? 6.5 : 7.5 }}
             >
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
