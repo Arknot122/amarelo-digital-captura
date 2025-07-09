@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Button as MovingButton } from "@/components/ui/moving-border";
@@ -198,7 +197,7 @@ const Services = () => {
               Solicitar Proposta Personalizada
             </Button>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
