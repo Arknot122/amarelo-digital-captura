@@ -1,3 +1,4 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Button as MovingButton } from "@/components/ui/moving-border";
@@ -50,6 +51,13 @@ const Services = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleWhatsAppClick = (serviceTitle: string) => {
+    const phone = "5562992672577";
+    const message = `Olá! Gostaria de saber mais sobre o serviço de ${serviceTitle}.`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -157,18 +165,12 @@ const Services = () => {
                       ))}
                     </ul>
                     <Button
-                      asChild
+                      onClick={() => handleWhatsAppClick(service.title)}
                       variant="hero"
                       size="lg"
                       className="w-full mt-auto"
                     >
-                      <a
-                        href={`https://wa.me/5562992672577?text=Olá! Gostaria de saber mais sobre o serviço de ${encodeURIComponent(service.title)}.`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Ver mais
-                      </a>
+                      Ver mais
                     </Button>
                   </div>
                 </MovingButton>
@@ -196,7 +198,7 @@ const Services = () => {
               Solicitar Proposta Personalizada
             </Button>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
