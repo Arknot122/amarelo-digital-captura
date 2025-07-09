@@ -29,11 +29,7 @@ const Header = () => {
     <>
       <ScrollProgress />
       <motion.header 
-        className="fixed top-0 w-full border-b border-border z-50 transition-all duration-300" 
-        style={{
-          backgroundColor: 'rgba(255,255,255,1)',
-          backdropFilter: `blur(${headerBlur}px)`
-        }} 
+        className="fixed top-0 w-full border-b border-border bg-background/95 backdrop-blur-md z-50 transition-all duration-300"
         initial={{ y: -100 }} 
         animate={{ y: 0 }} 
         transition={{ duration: 0.6, ease: "easeOut" }}

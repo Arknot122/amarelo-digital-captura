@@ -53,17 +53,17 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
     <>
       {/* Mobile Menu Button - visible on all screen sizes for better accessibility */}
       <Button
-        variant="ghost"
+        variant="outline"
         size="icon"
         onClick={() => setIsOpen(!isOpen)}
-        className="relative z-[80] md:hidden p-2"
+        className="relative z-[80] md:hidden p-2 text-foreground hover:text-primary border-border/50 hover:border-primary/50"
         aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
       >
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
+          {isOpen ? <X size={20} className="text-foreground" /> : <Menu size={20} className="text-foreground" />}
         </motion.div>
       </Button>
 
