@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
@@ -11,8 +12,6 @@ interface MobileMenuProps {
 const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const { isMobile } = useViewport();
-
-  if (!isMobile) return null;
 
   const menuItems = [
     { id: 'home', label: 'Home' },
@@ -52,17 +51,19 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
 
   return (
     <>
+      {/* Mobile Menu Button - visible on all screen sizes for better accessibility */}
       <Button
         variant="ghost"
         size="icon"
         onClick={() => setIsOpen(!isOpen)}
-        className="relative z-[80] md:hidden"
+        className="relative z-[80] md:hidden p-2"
+        aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
       >
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.3 }}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
         </motion.div>
       </Button>
 
@@ -84,7 +85,7 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
               initial="closed"
               animate="open"
               exit="closed"
-              className="fixed top-0 right-0 h-full w-80 bg-card border-l border-border z-[70] md:hidden"
+              className="fixed top-0 right-0 h-full w-72 sm:w-80 bg-card/95 backdrop-blur-xl border-l border-border z-[70] md:hidden shadow-2xl"
             >
               <div className="flex flex-col h-full pt-20 px-6">
                 <motion.div
@@ -92,14 +93,14 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
                   animate="open"
                   exit="closed"
                   transition={{ staggerChildren: 0.1, delayChildren: 0.1 }}
-                  className="space-y-6"
+                  className="space-y-4"
                 >
                   {menuItems.map((item, index) => (
                     <motion.button
                       key={item.id}
                       variants={itemVariants}
                       onClick={() => handleItemClick(item.id)}
-                      className="block w-full text-left py-4 px-2 text-lg font-medium text-black hover:text-primary transition-colors border-b border-border/50 hover:border-primary/50"
+                      className="block w-full text-left py-4 px-4 text-lg font-semibold text-foreground hover:text-primary transition-colors border-b border-border/30 hover:border-primary/50 rounded-lg hover:bg-primary/5"
                     >
                       {item.label}
                     </motion.button>
@@ -114,7 +115,7 @@ const MobileMenu = ({ onNavigate }: MobileMenuProps) => {
                     onClick={() => handleItemClick('contato')}
                     variant="hero"
                     size="lg"
-                    className="w-full"
+                    className="w-full text-base font-semibold"
                   >
                     Fale Conosco
                   </Button>
