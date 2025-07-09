@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 
 interface Particle {
@@ -16,11 +16,12 @@ interface ParticleSystemProps {
   className?: string;
 }
 
-const ParticleSystem = ({ count = 20, className = '' }: ParticleSystemProps) => {
+const ParticleSystem = ({ count = 15, className = '' }: ParticleSystemProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const mouseRef = useRef({ x: 0, y: 0 });
   const animationRef = useRef<number>();
+  const lastFrameTime = useRef<number>(0);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -121,9 +122,13 @@ const ParticleSystem = ({ count = 20, className = '' }: ParticleSystemProps) => 
       });
     };
 
-    const animate = () => {
-      updateParticles();
-      drawParticles();
+    const animate = (currentTime: number) => {
+      // Limit to 30 FPS for better performance
+      if (currentTime - lastFrameTime.current >= 33) {
+        updateParticles();
+        drawParticles();
+        lastFrameTime.current = currentTime;
+      }
       animationRef.current = requestAnimationFrame(animate);
     };
 
@@ -138,7 +143,7 @@ const ParticleSystem = ({ count = 20, className = '' }: ParticleSystemProps) => 
 
     resizeCanvas();
     createParticles();
-    animate();
+    animationRef.current = requestAnimationFrame(animate);
 
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('resize', handleResize);
