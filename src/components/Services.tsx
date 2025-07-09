@@ -53,9 +53,11 @@ const Services = () => {
   };
 
   const handleWhatsAppClick = (serviceTitle: string) => {
+    console.log('handleWhatsAppClick chamada para:', serviceTitle);
     const phone = "5562992672577";
     const message = `Olá! Gostaria de saber mais sobre o serviço de ${serviceTitle}.`;
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    console.log('URL do WhatsApp:', url);
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
@@ -109,10 +111,11 @@ const Services = () => {
               >
                 <MovingButton
                   borderRadius="2rem"
-                  className="h-full w-full bg-background/10 backdrop-blur-xl border-0 text-foreground relative overflow-hidden"
+                  className="h-full w-full bg-background/10 backdrop-blur-xl border-0 text-foreground relative overflow-hidden cursor-pointer"
                   containerClassName="h-full w-full"
                   duration={4000 + index * 1000}
                   borderClassName="h-24 w-24 opacity-60 bg-[radial-gradient(hsl(var(--primary))_40%,hsl(var(--neon-cyan))_60%,transparent_80%)]"
+                  onClick={() => handleWhatsAppClick(service.title)}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-background/20 via-card/30 to-background/20 backdrop-blur-xl" />
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
@@ -163,14 +166,9 @@ const Services = () => {
                         </motion.li>
                       ))}
                     </ul>
-                    <Button
-                      onClick={() => handleWhatsAppClick(service.title)}
-                      variant="hero"
-                      size="lg"
-                      className="w-full mt-auto"
-                    >
-                      Ver mais
-                    </Button>
+                    <div className="text-center">
+                      <span className="text-primary font-semibold">Ver mais</span>
+                    </div>
                   </div>
                 </MovingButton>
               </motion.div>
