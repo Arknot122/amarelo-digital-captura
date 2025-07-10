@@ -29,12 +29,10 @@ export default defineConfig(({ mode }) => ({
           vendor: [
             'react',
             'react-dom',
-            'framer-motion',
             '@radix-ui/react-dialog',
             '@radix-ui/react-slot',
           ],
           animations: ['framer-motion'],
-          ui: ['@/components/ui'],
         },
       },
     },
