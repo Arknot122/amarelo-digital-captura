@@ -20,25 +20,33 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Enable gzip compression
+    target: 'esnext',
+    minify: 'terser',
+    cssMinify: true,
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          ui: ['@radix-ui/react-slot', 'lucide-react'],
-          motion: ['framer-motion'],
+          vendor: [
+            'react',
+            'react-dom',
+            'framer-motion',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-slot',
+          ],
+          animations: ['framer-motion'],
+          ui: ['@/components/ui'],
         },
       },
     },
-    // Optimize chunk size
-    chunkSizeWarningLimit: 1000,
-    // Enable source maps for better debugging in production
-    sourcemap: false,
-    // Minify for production
-    minify: 'esbuild',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
   },
-  // Optimize dependencies
   optimizeDeps: {
     include: ['react', 'react-dom', 'framer-motion'],
   },
 }));
+

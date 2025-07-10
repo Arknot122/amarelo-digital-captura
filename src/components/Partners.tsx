@@ -118,11 +118,24 @@ const Partners = () => {
                       }}
                     >
                       <div className="h-16 w-auto flex items-center justify-center">
-                        <img 
-                          src={partner.logo} 
-                          alt={`${partner.name} logo`}
-                          className="max-h-12 max-w-full object-contain filter group-hover:brightness-110 transition-all duration-300"
-                        />
+                        <picture>
+                          <source
+                            srcSet={`${partner.logo}?format=webp`}
+                            type="image/webp"
+                          />
+                          <img 
+                            src={partner.logo}
+                            alt={`${partner.name} logo`}
+                            className="max-h-12 max-w-full object-contain filter group-hover:brightness-110 transition-all duration-300"
+                            loading="lazy"
+                            width={120}
+                            height={48}
+                            onError={(e) => {
+                              console.error(`Erro ao carregar logo ${partner.name}:`, e);
+                              e.currentTarget.style.opacity = '0.5';
+                            }}
+                          />
+                        </picture>
                       </div>
                     </motion.div>
                     <h3 className="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
