@@ -40,7 +40,7 @@ const Header = () => {
   }, []);
   return <>
       <ScrollProgress />
-      <motion.header className="fixed top-0 w-full border-b border-border bg-background/95 backdrop-blur-md z-50 transition-all duration-300" initial={{
+      <motion.header className="fixed top-0 w-full border-b border-border bg-white z-50 transition-all duration-300" initial={{
       y: -100
     }} animate={{
       y: 0
@@ -86,7 +86,7 @@ const Header = () => {
             }} transition={{
               duration: 0.3,
               delay: index * 0.1
-            }} className="transition-colors relative text-sm lg:text-base font-medium text-slate-950 bg-slate-50">
+            }} className="transition-colors relative text-sm lg:text-base font-medium text-black hover:text-gray-600">
                   {item.label}
                 </motion.button>)}
             </nav>
