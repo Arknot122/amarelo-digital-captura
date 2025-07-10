@@ -57,7 +57,7 @@ const Header = () => {
             }} transition={{
               duration: 0.2
             }}>
-                <motion.img src={logoMp} alt="MIP Assessoria Digital" className={`h-17 sm:h-18 md:h-20 w-auto object-contain ${!logoLoaded ? 'opacity-0' : 'opacity-100'}`} whileHover={{
+                <motion.img src={logoMp} alt="MIP Assessoria Digital" className={`h-16 sm:h-18 md:h-20 w-auto object-contain ${!logoLoaded ? 'opacity-0' : 'opacity-100'}`} whileHover={{
                 rotate: 5
               }} transition={{
                 duration: 0.3
