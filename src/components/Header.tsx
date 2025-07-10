@@ -86,7 +86,7 @@ const Header = () => {
             }} transition={{
               duration: 0.3,
               delay: index * 0.1
-            }} className="transition-colors relative text-sm lg:text-base font-medium text-slate-950">
+            }} className="transition-colors relative text-sm lg:text-base font-medium text-slate-950 bg-slate-50">
                   {item.label}
                 </motion.button>)}
             </nav>
