@@ -105,9 +105,6 @@ const Header = () => {
                   Fale Conosco
                 </Button>
               </motion.div>
-              
-              {/* Mobile Menu */}
-              <MobileMenu onNavigate={scrollToSection} />
             </div>
           </div>
         </div>
