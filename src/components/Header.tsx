@@ -3,9 +3,12 @@ import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import MobileMenu from "@/components/MobileMenu";
 import ScrollProgress from "@/components/ScrollProgress";
+import { useEffect, useState } from "react";
+import logoMp from "/logo-mp.png";
 
 const Header = () => {
   const { scrollY } = useScrollAnimation();
+  const [logoLoaded, setLogoLoaded] = useState(false);
   
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -21,6 +24,14 @@ const Header = () => {
     { id: "clientes", label: "Clientes" },
     { id: "contato", label: "Contato" }
   ];
+
+  useEffect(() => {
+    // Pré-carrega a imagem
+    const img = new Image();
+    img.src = logoMp;
+    img.onload = () => setLogoLoaded(true);
+    img.onerror = (e) => console.error('Erro ao carregar logo:', e);
+  }, []);
 
   return (
     <>
@@ -41,14 +52,20 @@ const Header = () => {
                 transition={{ duration: 0.2 }}
               >
                 <motion.img 
-                  src="/logo-mp.png"
+                  src={logoMp}
                   alt="MIP Assessoria Digital"
-                  className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+                  className={`h-8 sm:h-10 md:h-12 w-auto object-contain ${!logoLoaded ? 'opacity-0' : 'opacity-100'}`}
                   whileHover={{ rotate: 5 }}
                   transition={{ duration: 0.3 }}
+                  onLoad={() => {
+                    console.log('Logo carregada com sucesso');
+                    setLogoLoaded(true);
+                  }}
                   onError={(e) => {
                     console.error('Erro ao carregar logo no header:', e);
-                    e.currentTarget.style.display = 'none';
+                    const img = e.currentTarget;
+                    img.onerror = null; // previne loop infinito
+                    img.src = '/placeholder.svg'; // usa placeholder como fallback
                   }}
                 />
               </motion.div>
