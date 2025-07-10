@@ -4,7 +4,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import MobileMenu from "@/components/MobileMenu";
 import ScrollProgress from "@/components/ScrollProgress";
 import { useEffect, useState } from "react";
-import logoMp from "/logo-mp.png";
+import logoMp from "/lovable-uploads/06ed1d2b-a141-42a4-94a2-a0fa76a92941.png";
 
 const Header = () => {
   const { scrollY } = useScrollAnimation();
