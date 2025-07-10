@@ -41,11 +41,11 @@ const Header = () => {
                 transition={{ duration: 0.2 }}
               >
                 <picture>
-                  <source srcSet="/mp-logo-center.webp" type="image/webp" />
+                  <source srcSet="/logo-mp.webp" type="image/webp" />
                   <motion.img 
-                    src="/mp-logo-center.png"
+                    src="/logo-mp.png"
                     alt="MIP Assessoria Digital"
-                    className="h-10 w-auto object-contain"
+                    className="h-8 sm:h-10 md:h-12 w-auto object-contain"
                     whileHover={{ rotate: 5 }}
                     transition={{ duration: 0.3 }}
                     onError={(e) => {
