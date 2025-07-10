@@ -54,7 +54,7 @@ const Header = () => {
                 <motion.img 
                   src={logoMp}
                   alt="MIP Assessoria Digital"
-                  className={`h-8 sm:h-10 md:h-12 w-auto object-contain ${!logoLoaded ? 'opacity-0' : 'opacity-100'}`}
+                  className={`h-12 sm:h-14 md:h-16 w-auto object-contain ${!logoLoaded ? 'opacity-0' : 'opacity-100'}`}
                   whileHover={{ rotate: 5 }}
                   transition={{ duration: 0.3 }}
                   onLoad={() => {
