@@ -37,7 +37,7 @@ const Header = () => {
     <>
       <ScrollProgress />
       <motion.header 
-        className="fixed top-0 w-full border-b border-border bg-background/95 backdrop-blur-md z-50 transition-all duration-300" 
+        className="fixed top-0 w-full border-b border-border bg-white backdrop-blur-md z-50 transition-all duration-300" 
         initial={{ y: -100 }} 
         animate={{ y: 0 }} 
         transition={{ duration: 0.6, ease: "easeOut" }}
