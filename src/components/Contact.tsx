@@ -176,16 +176,12 @@ const Contact = () => {
             }}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Fundador 1 */}
-                  <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl border-2 border-dashed border-primary/30 flex items-center justify-center group hover:border-primary/50 transition-all duration-300">
-                    <div className="text-center text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                      <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center">
-                        <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                      <p className="text-xs font-medium">Fundador 1</p>
-                      <p className="text-xs mt-1 opacity-70">Em breve</p>
-                    </div>
+                  <div className="aspect-square bg-card/50 rounded-2xl border border-border/50 overflow-hidden group hover:border-primary/50 transition-all duration-300">
+                    <img 
+                      src="/lovable-uploads/e24c5353-73a9-465a-9939-4c67ee2c2434.png"
+                      alt="Fundador 1"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
 
                   {/* Fundador 2 */}
