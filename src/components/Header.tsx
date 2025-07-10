@@ -40,20 +40,17 @@ const Header = () => {
                 whileHover={{ scale: 1.05 }} 
                 transition={{ duration: 0.2 }}
               >
-                <picture>
-                  <source srcSet="/logo-mp.webp" type="image/webp" />
-                  <motion.img 
-                    src="/logo-mp.png"
-                    alt="MIP Assessoria Digital"
-                    className="h-8 sm:h-10 md:h-12 w-auto object-contain"
-                    whileHover={{ rotate: 5 }}
-                    transition={{ duration: 0.3 }}
-                    onError={(e) => {
-                      console.error('Erro ao carregar logo no header:', e);
-                      e.currentTarget.style.display = 'none';
-                    }}
-                  />
-                </picture>
+                <motion.img 
+                  src="/logo-mp.png"
+                  alt="MIP Assessoria Digital"
+                  className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+                  whileHover={{ rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                  onError={(e) => {
+                    console.error('Erro ao carregar logo no header:', e);
+                    e.currentTarget.style.display = 'none';
+                  }}
+                />
               </motion.div>
             </div>
             
